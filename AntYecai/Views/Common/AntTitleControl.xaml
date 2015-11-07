@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="AntYecai.Views.Common.AntTitleControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Border Height="100">
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+            
+            <TextBlock Name="title" FontSize="35" Foreground="White" Text="Ant版野菜部落">
+                
+            </TextBlock>
+            <TextBlock Name="blurTitle" FontSize="35" Foreground="#86FFC200" Text="Ant版野菜部落">
+                <TextBlock.Effect>
+                    <BlurEffect></BlurEffect>
+                </TextBlock.Effect>
+            </TextBlock>
+            <Rectangle Grid.Row="2" RenderTransformOrigin="1,0.5" Margin="0,0,0,1">
+                <Rectangle.Fill>
+                    <VisualBrush Visual="{Binding ElementName=title}"/>
+                </Rectangle.Fill>
+                <Rectangle.OpacityMask>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0.2" Color="Transparent"/>
+                        <GradientStop Offset="1" Color="Black"/>
+                    </LinearGradientBrush>
+                </Rectangle.OpacityMask>
+                <Rectangle.RenderTransform>
+                    <ScaleTransform ScaleY="-1"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Grid.Row="2" RenderTransformOrigin="1,0.5" Margin="0,0,0,1">
+                <Rectangle.Fill>
+                    <VisualBrush Visual="{Binding ElementName=blurTitle}"/>
+                </Rectangle.Fill>
+                <Rectangle.OpacityMask>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0.2" Color="Transparent"/>
+                        <GradientStop Offset="1" Color="Black"/>
+                    </LinearGradientBrush>
+                </Rectangle.OpacityMask>
+                <Rectangle.RenderTransform>
+                    <ScaleTransform ScaleY="-1"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+    </Border>
+</UserControl>

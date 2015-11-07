@@ -1,0 +1,30 @@
+﻿<Window x:Class="AntYecai.Views.AuthorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:models="clr-namespace:AntYecai.Models"
+        xmlns:common="clr-namespace:AntYecai.Views.Common"
+        Title="AuthorWindow" SizeToContent="WidthAndHeight" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" WindowStyle="None" ResizeMode="NoResize">
+    <Border Name="main" MouseLeftButtonUp="Main_OnMouseLeftButtonUp">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF88C2E6" Offset="0" />
+                <GradientStop Color="#FF104A75" Offset="1" />
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <common:AntTitleControl/>
+
+            <Border Grid.Row="2" Background="#FFEBF2F9" Padding="60, 20, 60, 30">
+                <StackPanel TextBlock.FontSize="16">
+                    <TextBlock>联系作者：</TextBlock>
+                    <TextBox IsReadOnly="True" Margin="0, 3, 0, 0">QQ: 517377100</TextBox>
+                    <TextBox IsReadOnly="True" Margin="0, 3, 0, 0">Email: 517377100@qq.com</TextBox>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
