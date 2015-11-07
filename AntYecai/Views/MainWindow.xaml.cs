@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 using AntYecai.Models;
@@ -21,6 +22,7 @@ namespace AntYecai.Views
         private Style NotifyFailedStyle { get; set; }
 
         private PlatformViewModel PlatformViewModel { get; set; }
+        private bool ForceClosing { get; set; }
 
         public MainWindow()
         {
@@ -30,6 +32,62 @@ namespace AntYecai.Views
             NotifyPanelAnimation = FindResource("NotifyPanelAnimation") as DoubleAnimationUsingKeyFrames;
             NotifySuccessStyle = FindResource("NotifySuccessStyle") as Style;
             NotifyFailedStyle = FindResource("NotifyFailedStyle") as Style;
+            InitNotifyIcon();
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            if (!ForceClosing)
+            {
+                this.Hide();
+                e.Cancel = true;
+                return;
+            }
+            base.OnClosing(e);
+        }
+
+        private void InitNotifyIcon()
+        {
+            NotifyIcon notifyIcon = new NotifyIcon
+                {
+                    BalloonTipText = "Ant版野菜部落",
+                    Icon = Properties.Resources.ant
+                };
+            notifyIcon.MouseClick += (sender, args) =>
+                {
+                    if (args.Button == MouseButtons.Left)
+                    {
+                        this.Show();
+                        this.WindowState = WindowState.Minimized;
+                        this.WindowState = WindowState.Maximized;
+                    }
+                };
+
+            ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
+
+//            addNewNotifyIconMenuItem(contextMenuStrip, "显示", () =>
+//                {
+//                    WindowState = WindowState.Minimized;
+//                    WindowState = WindowState.Maximized;
+//                });
+
+            addNewNotifyIconMenuItem(contextMenuStrip, "退出", () =>
+                {
+                    ForceClosing = true;
+                    Close();
+                });
+
+            notifyIcon.ContextMenuStrip = contextMenuStrip;
+            notifyIcon.Visible = true;
+        }
+
+        private static void addNewNotifyIconMenuItem(ContextMenuStrip contextMenuStrip, String text, Action action)
+        {
+            ToolStripMenuItem menuItem = new ToolStripMenuItem();
+            menuItem.Text = text;
+            // menuItem.Image = Properties.Resources.PerfCenterCpl.ToBitmap();
+            menuItem.Click += (sender, args) => action();
+            contextMenuStrip.Items.Add(menuItem);
         }
 
         private void InitDataContext()
