@@ -114,6 +114,7 @@
     <Compile Include="Services\PlatformServiceManager.cs" />
     <Compile Include="Services\UserSecurityService.cs" />
     <Compile Include="Utils\MessageBoxUtil.cs" />
+    <Compile Include="Utils\NativeWindowApiHelper.cs" />
     <Compile Include="Utils\ValidationUtil.cs" />
     <Compile Include="Validations\LoginNameValidationRole.cs" />
     <Compile Include="ViewModels\FriendlyLinkPanelViewModel.cs" />

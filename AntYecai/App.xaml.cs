@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Windows;
+using AntYecai.Tools;
+using AntYecai.Utils;
 using AntYecai.Views;
 
 namespace AntYecai
@@ -13,25 +15,21 @@ namespace AntYecai
         {
             Process currentProcess = Process.GetCurrentProcess();
 
-            foreach (Process item in Process.GetProcessesByName(currentProcess.ProcessName))
+            foreach (Process process in Process.GetProcessesByName(currentProcess.ProcessName))
             {
-                if (item.Id != currentProcess.Id &&
-                (item.StartTime - currentProcess.StartTime).TotalMilliseconds <= 0)
+                if (process.Id != currentProcess.Id)
                 {
-                    item.Kill();
-
-                    item.WaitForExit();
-
-                    break;
+                    MessageBoxUtil.ShowError("您已经启动了游戏!");
+                    NativeWindowApiHelper.ShowWindowAsync(process.MainWindowHandle, NativeWindowApiHelper.SW_RESTORE);
+                    NativeWindowApiHelper.SetForegroundWindow(process.MainWindowHandle);
+                    currentProcess.Kill();
                 }
             }
 
-            base.OnStartup(e);  
-
             base.OnStartup(e);
 
-//            MainWindow mainWindow = new MainWindow();
-//            mainWindow.ShowDialog();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.ShowDialog();
         }
     }
 }
