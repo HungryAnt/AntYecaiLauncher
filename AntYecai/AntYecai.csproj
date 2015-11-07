@@ -130,6 +130,12 @@
     <Compile Include="Views\Common\WaitingControl.xaml.cs">
       <DependentUpon>WaitingControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dialog\ExitWindow.xaml.cs">
+      <DependentUpon>ExitWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialog\ExitWindow2.xaml.cs">
+      <DependentUpon>ExitWindow2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ForumView.xaml.cs">
       <DependentUpon>ForumView.xaml</DependentUpon>
     </Compile>
@@ -198,6 +204,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Common\WaitingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialog\ExitWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialog\ExitWindow2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

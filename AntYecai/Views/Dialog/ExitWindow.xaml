@@ -1,0 +1,21 @@
+﻿<Window x:Class="AntYecai.Views.Dialog.ExitWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ExitWindow" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <GroupBox Header="关闭窗口时" Padding="5">
+            <StackPanel Height="80" Orientation="Horizontal" HorizontalAlignment="Center">
+                <RadioButton VerticalAlignment="Center" Margin="10" IsChecked="True">最小化到托盘</RadioButton>
+                <RadioButton VerticalAlignment="Center" Margin="10">退出游戏程序</RadioButton>
+            </StackPanel>
+        </GroupBox>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="buttonOK" Template="{StaticResource ArtButtonTemplate}" Padding="5" Width="80" Margin="10" Click="buttonOK_Click">确定</Button>
+            <Button Name="buttonCancel" Template="{StaticResource ArtButtonTemplate}" Padding="5" Width="80" Margin="10" Click="buttonCancel_Click">取消</Button>
+        </StackPanel>
+    </Grid>
+</Window>

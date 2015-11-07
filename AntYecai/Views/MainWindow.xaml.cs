@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media.Animation;
 using AntYecai.Models;
 using AntYecai.ViewModels;
+using AntYecai.Views.Dialog;
 
 namespace AntYecai.Views
 {
@@ -39,9 +40,22 @@ namespace AntYecai.Views
         {
             if (!ForceClosing)
             {
-                this.Hide();
-                e.Cancel = true;
-                return;
+                ExitWindow2 exitWindow = new ExitWindow2()
+                    {
+                        Owner = this
+                    };
+                exitWindow.ShowDialog();
+                if (exitWindow.CloseWindowState == ExitWindow2.State.Cancel)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+                if (exitWindow.CloseWindowState == ExitWindow2.State.NotifyIcon)
+                {
+                    this.Hide();
+                    e.Cancel = true;
+                    return;
+                }
             }
             base.OnClosing(e);
         }
@@ -57,21 +71,16 @@ namespace AntYecai.Views
                 {
                     if (args.Button == MouseButtons.Left)
                     {
-                        this.Show();
-                        this.WindowState = WindowState.Minimized;
-                        this.WindowState = WindowState.Maximized;
+                        ShowGameWindow();
                     }
                 };
 
             ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
 
-//            addNewNotifyIconMenuItem(contextMenuStrip, "显示", () =>
-//                {
-//                    WindowState = WindowState.Minimized;
-//                    WindowState = WindowState.Maximized;
-//                });
-
-            addNewNotifyIconMenuItem(contextMenuStrip, "退出", () =>
+            AddNewNotifyIconMenuItem(contextMenuStrip, "显示窗口", ShowGameWindow);
+            AddNewNotifyIconMenuItem(contextMenuStrip, "官方论坛", StartHomePage);
+            AddNewNotifyIconMenuItem(contextMenuStrip, "开发者", ShowAuthor);
+            AddNewNotifyIconMenuItem(contextMenuStrip, "退出游戏", () =>
                 {
                     ForceClosing = true;
                     Close();
@@ -81,10 +90,9 @@ namespace AntYecai.Views
             notifyIcon.Visible = true;
         }
 
-        private static void addNewNotifyIconMenuItem(ContextMenuStrip contextMenuStrip, String text, Action action)
+        private static void AddNewNotifyIconMenuItem(ContextMenuStrip contextMenuStrip, String text, Action action)
         {
-            ToolStripMenuItem menuItem = new ToolStripMenuItem();
-            menuItem.Text = text;
+            ToolStripMenuItem menuItem = new ToolStripMenuItem {Text = text};
             // menuItem.Image = Properties.Resources.PerfCenterCpl.ToBitmap();
             menuItem.Click += (sender, args) => action();
             contextMenuStrip.Items.Add(menuItem);
@@ -185,14 +193,12 @@ namespace AntYecai.Views
 
         private void Homepage_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Process.Start(GameConfig.HomePageUrl);
+            StartHomePage();
         }
 
         private void Author_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            AuthorWindow authorWindow = new AuthorWindow();
-            authorWindow.Owner = this;
-            authorWindow.ShowDialog();
+            ShowAuthor();
         }
 
         private void RunBackgroundTask(Action workAction, Func<String> completeAction)
@@ -233,6 +239,24 @@ namespace AntYecai.Views
                     StartNotifyPanelAnimation();
                 };
             backgroundWorker.RunWorkerAsync();
+        }
+
+        private void ShowGameWindow()
+        {
+            this.Show();
+            this.WindowState = WindowState.Minimized;
+            this.WindowState = WindowState.Maximized;
+        }
+
+        private void StartHomePage()
+        {
+            Process.Start(GameConfig.HomePageUrl);
+        }
+
+        private void ShowAuthor()
+        {
+            AuthorWindow authorWindow = new AuthorWindow {Owner = this};
+            authorWindow.ShowDialog();
         }
     }
 }
