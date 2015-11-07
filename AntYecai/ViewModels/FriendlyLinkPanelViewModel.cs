@@ -25,6 +25,12 @@ namespace AntYecai.ViewModels
                 });
             FriendlyLinks.Add(new FriendlyLink()
                 {
+                    Header = "新闻动态",
+                    ImagePath = "/AntYecai;component/Images/yecai.jpg",
+                    Url = GameConfig.News
+                });
+            FriendlyLinks.Add(new FriendlyLink()
+                {
                     Header = "QQ群",
                     ImagePath = "/AntYecai;component/Images/qq.jpg",
                     Url = GameConfig.QQqunUrl
@@ -35,18 +41,18 @@ namespace AntYecai.ViewModels
                     ImagePath = "/AntYecai;component/Images/shop.png",
                     Url = GameConfig.ShopUrl
                 });
-            FriendlyLinks.Add(new FriendlyLink()
-                {
-                    Header = "纯卖萌",
-                    ImagePath = "/AntYecai;component/Images/meng.jpg",
-                    Url = GameConfig.ForumUrl
-                });
-            FriendlyLinks.Add(new FriendlyLink()
-                {
-                    Header = "纯卖萌",
-                    ImagePath = "/AntYecai;component/Images/meng2.jpg",
-                    Url = GameConfig.ForumUrl
-                });
+//            FriendlyLinks.Add(new FriendlyLink()
+//                {
+//                    Header = "纯卖萌",
+//                    ImagePath = "/AntYecai;component/Images/meng.jpg",
+//                    Url = GameConfig.ForumUrl
+//                });
+//            FriendlyLinks.Add(new FriendlyLink()
+//                {
+//                    Header = "纯卖萌",
+//                    ImagePath = "/AntYecai;component/Images/meng2.jpg",
+//                    Url = GameConfig.ForumUrl
+//                });
             FriendlyLinks.Add(new FriendlyLink()
                 {
                     Header = "火拼俄罗斯",

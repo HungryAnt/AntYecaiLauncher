@@ -9,6 +9,7 @@ namespace AntYecai
         public const String Version = "game center版本-v0.1";
         public const String HomePageUrl = "http://www.yecaibuluo.com/";
         public const String ForumUrl = "http://www.yecaibuluo.com/bbs/forum.php";
+        public const String News = "http://www.yecaibuluo.com/bbs/forum.php?mod=forumdisplay&fid=2";
         public const String QQqunUrl = "http://www.yecaibuluo.com/bbs/forum.php?mod=viewthread&tid=74";
 
         public const String ShopUrl = ApiServerEndpoint + "/link/shop";

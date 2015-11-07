@@ -45,6 +45,7 @@ namespace AntYecai.Views
             registerView.InitDataContext(PlatformViewModel.RegisterViewModel);
 
             GameEntryView gameEntryView = new GameEntryView();
+            gameEntryView.InitDataContext(PlatformViewModel.GameEntryViewModel);
             loginView.Register += () =>
                 {
                     registerView.StartToDisplay();
@@ -72,11 +73,13 @@ namespace AntYecai.Views
             loginView.Login += () => RunBackgroundTask(
                 () =>
                     {
-                        bool success = PlatformViewModel.LoginViewModel.Login();
-                        if (!success)
+                        UserLoginResult userLoginResult = PlatformViewModel.LoginViewModel.Login();
+                        if (!userLoginResult.Success)
                         {
                             throw new ApplicationException("用户名或密码错误");
                         }
+                        PlatformViewModel.GameEntryViewModel.LoginName = PlatformViewModel.LoginViewModel.LoginName;
+                        PlatformViewModel.GameEntryViewModel.UserId = userLoginResult.UserId;
                     },
                 () =>
                     {

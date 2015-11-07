@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AntYecai.ViewModels;
 
 namespace AntYecai.Views
 {
@@ -21,6 +22,8 @@ namespace AntYecai.Views
     /// </summary>
     public partial class GameEntryView : UserControl
     {
+        private GameEntryViewModel GameEntryViewModel { get; set; }
+
         public event Action Logout;
 
         public GameEntryView()
@@ -28,10 +31,15 @@ namespace AntYecai.Views
             InitializeComponent();
         }
 
+        public void InitDataContext(GameEntryViewModel gameEntryViewModel)
+        {
+            GameEntryViewModel = gameEntryViewModel;
+            this.DataContext = GameEntryViewModel;
+        }
+
         private void buttonStartWindowMode_Click(object sender, RoutedEventArgs e)
         {
-            // Directory.SetCurrentDirectory("D:\\dev\\ruby\\ruby-game\\output0-7-1");
-            Process.Start("yecaigame_0_7_1_beta.exe");
+            GameEntryViewModel.Enter();
         }
 
         private void buttonStartFullscreenMode_Click(object sender, RoutedEventArgs e)
@@ -46,5 +54,7 @@ namespace AntYecai.Views
                 Logout();
             }
         }
+
+
     }
 }

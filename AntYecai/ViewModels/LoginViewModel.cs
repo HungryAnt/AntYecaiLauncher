@@ -51,7 +51,7 @@ namespace AntYecai.ViewModels
             return true;
         }
 
-        public bool Login()
+        public UserLoginResult Login()
         {
             UserLoginInfo userLoginInfo = new UserLoginInfo()
                 {

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:models="clr-namespace:AntYecai.Models"
         xmlns:common="clr-namespace:AntYecai.Views.Common" xmlns:views="clr-namespace:AntYecai.Views"
         xmlns:antYecai="clr-namespace:AntYecai"
-        Title="Ant版野菜部落" Height="515" Width="485" MinHeight="600" MinWidth="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="Ant版野菜部落" Height="515" Width="485" MinHeight="600" MinWidth="800" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/AntYecai;component/Images/ant.ico">
     <Window.Resources>
         <DoubleAnimationUsingKeyFrames x:Key="NotifyPanelAnimation">
             <LinearDoubleKeyFrame Value="0" KeyTime="0:0:0"/>

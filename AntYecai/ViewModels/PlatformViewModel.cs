@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using AntYecai.Foundation;
+﻿using AntYecai.Foundation;
 
 namespace AntYecai.ViewModels
 {
@@ -12,10 +8,13 @@ namespace AntYecai.ViewModels
         {
             RegisterViewModel = new RegisterViewModel();
             LoginViewModel = new LoginViewModel();
+            GameEntryViewModel = new GameEntryViewModel();
         }
 
         public RegisterViewModel RegisterViewModel { get; private set; }
 
         public LoginViewModel LoginViewModel { get; private set; }
+
+        public GameEntryViewModel GameEntryViewModel { get; private set; }
     }
 }

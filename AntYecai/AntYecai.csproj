@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ant.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -104,6 +107,7 @@
     <Compile Include="Models\FriendlyLink.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserLoginInfo.cs" />
+    <Compile Include="Models\UserLoginResult.cs" />
     <Compile Include="Models\UserRegisterInfo.cs" />
     <Compile Include="Services\PlatformServiceManager.cs" />
     <Compile Include="Services\UserSecurityService.cs" />
@@ -285,6 +289,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\tetris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ant.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ant.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
