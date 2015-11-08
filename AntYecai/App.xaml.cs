@@ -37,7 +37,7 @@ namespace AntYecai
 
         private static bool CheckPath(string path)
         {
-            const string pattern = @"^[a-zA-Z0-9-_\\:]+$";
+            const string pattern = @"^[a-zA-Z0-9-_\\: ]+$";
             Regex regex = new Regex(pattern);
             return regex.IsMatch(path);
         } 
