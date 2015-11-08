@@ -24,14 +24,32 @@ namespace AntYecai.ViewModels
 
         public String ScreenMode { get; set; }
 
+        private Process _processRubyGame;
+
         public void Enter()
         {
+            if (!IsRubyGameExit())
+            {
+                MessageBoxUtil.ShowError("游戏已经启动！");
+                return;
+            }
+
             if (!File.Exists(GameConfig.RubyGameFileName))
             {
                 MessageBoxUtil.ShowError(String.Format("未找到游戏文件:{0}", GameConfig.RubyGameFileName));
                 return;
             }
-            Process.Start(String.Format("{0} {1} {2}", GameConfig.RubyGameFileName, UserId, ScreenMode));
+//            Directory.SetCurrentDirectory("D:\\\\dev\\ruby\\ruby-game\\output0-8-0");
+            _processRubyGame = Process.Start(GameConfig.RubyGameFileName, String.Join(" ", UserId, ScreenMode));
+        }
+
+        public bool IsRubyGameExit()
+        {
+            if (_processRubyGame == null)
+            {
+                return true;
+            }
+            return _processRubyGame.HasExited;
         }
     }
 }

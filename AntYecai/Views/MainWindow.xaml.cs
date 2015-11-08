@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 using AntYecai.Models;
+using AntYecai.Tools;
 using AntYecai.ViewModels;
 using AntYecai.Views.Dialog;
 
@@ -56,6 +57,13 @@ namespace AntYecai.Views
                     return;
                 }
             }
+            if (!PlatformViewModel.GameEntryViewModel.IsRubyGameExit())
+            {
+                MessageBoxUtil.ShowError("游戏已经启动！请先退出游戏");
+                e.Cancel = true;
+                return;
+            }
+            
             base.OnClosing(e);
         }
 
@@ -83,6 +91,7 @@ namespace AntYecai.Views
                 {
                     ForceClosing = true;
                     Close();
+                    ForceClosing = false;
                 });
 
             notifyIcon.ContextMenuStrip = contextMenuStrip;

@@ -26,5 +26,8 @@ namespace AntYecai.Models
 
         [DataMember(Name = "introduction")]
         public String Introduction { get; set; }
+
+        [DataMember(Name = "sign")]
+        public String Sign { get; set; }
     }
 }

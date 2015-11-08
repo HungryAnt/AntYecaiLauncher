@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using AntYecai.Foundation;
 using AntYecai.Models;
@@ -56,7 +57,8 @@ namespace AntYecai.ViewModels
             UserLoginInfo userLoginInfo = new UserLoginInfo()
                 {
                     LoginName = LoginName,
-                    Password = Password
+                    Password = Password,
+                    Sign = MD5SignatureUtil.GetSignAsHex(LoginName + Password + "AntLogin")
                 };
             return PlatformServiceManager.Instance.GetService<UserSecurityService>().Login(userLoginInfo);
         }

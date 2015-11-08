@@ -146,7 +146,8 @@ namespace AntYecai.ViewModels
                     Gender = Gender,
                     QQ = QQ,
                     Email = Email,
-                    Introduction = ""
+                    Introduction = "",
+                    Sign = MD5SignatureUtil.GetSignAsHex(LoginName + Password + "AntRegister")
                 };
 
             PlatformServiceManager.Instance.GetService<UserSecurityService>().Register(userRegisterInfo);
