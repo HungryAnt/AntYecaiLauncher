@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using AntYecai.Types;
 using AntYecai.ViewModels;
 using Microsoft.Win32;
 
@@ -25,6 +26,8 @@ namespace AntYecai.Views
         {
             RegisterViewModel = registerViewModel;
             this.DataContext = RegisterViewModel;
+
+            radioButtonGenderSecret.IsChecked = true;
         }
 
         public void StartToDisplay()
@@ -150,6 +153,21 @@ namespace AntYecai.Views
         {
             RegisterViewModel.RelatedUserId = String.Empty;
             ValidateRelatedUserId();
+        }
+
+        private void genderSecret_Checked(object sender, RoutedEventArgs e)
+        {
+            RegisterViewModel.Gender = Gender.Unknown.ToString();
+        }
+
+        private void genderMale_Checked(object sender, RoutedEventArgs e)
+        {
+            RegisterViewModel.Gender = Gender.Male.ToString();
+        }
+
+        private void genderFemale_Checked(object sender, RoutedEventArgs e)
+        {
+            RegisterViewModel.Gender = Gender.Female.ToString();
         }
     }
 }

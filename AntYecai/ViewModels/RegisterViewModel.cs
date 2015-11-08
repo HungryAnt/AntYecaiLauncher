@@ -62,6 +62,32 @@ namespace AntYecai.ViewModels
             }
         }
 
+        public string Gender { get; set; }
+
+        private String _qq;
+
+        public String QQ
+        {
+            get { return _qq; }
+            set
+            {
+                _qq = value;
+                RaisePropertyChanged("QQ");
+            }
+        }
+
+        private String _email;
+
+        public String Email
+        {
+            get { return _email; }
+            set
+            {
+                _email = value;
+                RaisePropertyChanged("Email");
+            }
+        }
+
         public bool TryValidateLoginName(out string message)
         {
             return ValidationUtil.TryValidateLoginName(LoginName, out message);
@@ -107,7 +133,7 @@ namespace AntYecai.ViewModels
 
         public void Clear()
         {
-            LoginName = Password = RepeatPassword = RelatedUserId = String.Empty;
+            LoginName = Password = RepeatPassword = RelatedUserId = QQ = Email = String.Empty;
         }
 
         public void Register()
@@ -117,10 +143,10 @@ namespace AntYecai.ViewModels
                     LoginName = LoginName,
                     Password = Password,
                     RelatedUserId = RelatedUserId,
-                    Gender = "Male",
-                    QQ = "517377100",
-                    Email = "517377100@qq.com",
-                    Introduction = "软件开发者"
+                    Gender = Gender,
+                    QQ = QQ,
+                    Email = Email,
+                    Introduction = ""
                 };
 
             PlatformServiceManager.Instance.GetService<UserSecurityService>().Register(userRegisterInfo);

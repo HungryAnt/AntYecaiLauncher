@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using AntYecai.Foundation;
+using AntYecai.Tools;
 
 namespace AntYecai.ViewModels
 {
@@ -20,10 +22,16 @@ namespace AntYecai.ViewModels
 
         public String UserId { get; set; }
 
+        public String ScreenMode { get; set; }
+
         public void Enter()
         {
-            // Directory.SetCurrentDirectory("D:\\dev\\ruby\\ruby-game\\output0-7-1");
-            Process.Start(String.Format("yecaigame_0_7_1_beta.exe {0}", UserId));
+            if (!File.Exists(GameConfig.RubyGameFileName))
+            {
+                MessageBoxUtil.ShowError(String.Format("未找到游戏文件:{0}", GameConfig.RubyGameFileName));
+                return;
+            }
+            Process.Start(String.Format("{0} {1} {2}", GameConfig.RubyGameFileName, UserId, ScreenMode));
         }
     }
 }

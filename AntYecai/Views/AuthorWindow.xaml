@@ -21,7 +21,8 @@
 
             <Border Grid.Row="2" Background="#FFEBF2F9" Padding="60, 20, 60, 30">
                 <StackPanel TextBlock.FontSize="16">
-                    <TextBlock>联系作者：</TextBlock>
+                    <TextBlock>本游戏所有模块由 麟大大 独立开发</TextBlock>
+                    <TextBlock Margin="0, 5, 0, 0">联系方式</TextBlock>
                     <TextBox IsReadOnly="True" Margin="0, 3, 0, 0">QQ: 517377100</TextBox>
                     <TextBox IsReadOnly="True" Margin="0, 3, 0, 0">Email: 517377100@qq.com</TextBox>
                 </StackPanel>

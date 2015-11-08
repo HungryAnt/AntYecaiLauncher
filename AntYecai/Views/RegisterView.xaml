@@ -4,19 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d" 
-             d:DesignHeight="202" d:DesignWidth="570">
+             d:DesignHeight="294" d:DesignWidth="574">
      
-    <Grid>
+    <Grid Margin="10">
         <Grid.Resources>
             <Style x:Key="commonStyle" TargetType="{x:Type FrameworkElement}">
-                <Setter Property="Control.FontSize" Value="14"/>
+                <Setter Property="Control.FontSize" Value="13"/>
                 <Setter Property="FrameworkElement.VerticalAlignment" Value="Center"/>
-                <Setter Property="Control.Padding" Value="2.5"/>
+                <Setter Property="Control.Padding" Value="1"/>
             </Style>
             <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource commonStyle}"/>
             <Style TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource commonStyle}" />
             <Style TargetType="Label">
-                <Setter Property="Control.FontSize" Value="14"/>
+                <Setter Property="Control.FontSize" Value="13"/>
                 <Setter Property="Control.HorizontalAlignment" Value="Right"/>
             </Style>
         </Grid.Resources>
@@ -30,13 +30,19 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="5" />
+            <RowDefinition Height="2" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="5" />
+            <RowDefinition Height="2" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="5" />
+            <RowDefinition Height="2" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="5" />
+            <RowDefinition Height="2" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Label>用户名:</Label>
@@ -73,10 +79,23 @@
         <TextBlock Name="relatedUserIdError" Grid.Row="6" Grid.Column="5" Margin="4, 0, 0, 0"
                     Style="{StaticResource ErrorTextBlockStyle}" />
 
-        <Button Name="cancel" Grid.Row="8" Template="{StaticResource ArtGrayButtonTemplate}"
+        <Label Grid.Row="8" >性别:</Label>
+        <StackPanel Grid.Row="8" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="radioButtonGenderSecret" FontSize="13" Margin="5, 0, 10, 0" Checked="genderSecret_Checked">保密</RadioButton>
+            <RadioButton FontSize="13" Margin="5, 0, 10, 0" Checked="genderMale_Checked">男</RadioButton>
+            <RadioButton FontSize="13" Margin="5, 0, 10, 0" Checked="genderFemale_Checked">女</RadioButton>
+        </StackPanel>
+        
+        <Label Grid.Row="10" >QQ:</Label>
+        <TextBox Grid.Row="10" Grid.Column="2" Text="{Binding Path=QQ, UpdateSourceTrigger=PropertyChanged}" MaxLength="16"/>
+
+        <Label Grid.Row="12" >Email:</Label>
+        <TextBox Grid.Row="12" Grid.Column="2" Text="{Binding Path=Email, UpdateSourceTrigger=PropertyChanged}" MaxLength="32"/>
+        
+        <Button Name="cancel" Grid.Row="14" Template="{StaticResource ArtGrayButtonTemplate}"
                 Width="100" Height="26" HorizontalAlignment="Left" Click="Cancel_OnClick">
             取消</Button>
-        <Button Name="register" Grid.Row="8" Grid.Column="2" Template="{StaticResource ArtButtonTemplate}" Padding="5" Margin="0, 10" Click="register_Click">
+        <Button Name="register" Grid.Row="14" Grid.Column="2" Template="{StaticResource ArtButtonTemplate}" Padding="5" Margin="0, 10" Click="register_Click">
             确认注册
         </Button>
     </Grid>

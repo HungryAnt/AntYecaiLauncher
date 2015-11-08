@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="124" d:DesignWidth="300">
-    <Grid>
+    <Grid Margin="30">
         <Grid.Resources>
             <Style TargetType="TextBlock">
                 <Setter Property="Control.FontSize" Value="14"></Setter>
@@ -40,7 +40,7 @@
         <PasswordBox Name="password" Grid.Row="2" Grid.Column="2" FontSize="14" VerticalAlignment="Center" Padding="2.5" PasswordChanged="PasswordBox_PasswordChanged"></PasswordBox>
         <TextBlock Name="passwordError" Style="{StaticResource ErrorTextBlockStyle}" Grid.Row="2" Grid.Column="4"/>
 
-        <Button Name="enter" Grid.Row="4" Grid.Column="2" Template="{StaticResource ArtButtonTemplate}" Padding="5" Margin="0, 1" Click="enter_Click">
+        <Button Name="enter" Grid.Row="4" Grid.Column="2" Template="{StaticResource ArtButtonTemplate}" Padding="5" Margin="0, 1" Click="enter_Click" IsDefault="True">
             登录
         </Button>
     </Grid>

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:models="clr-namespace:AntYecai.Models"
         xmlns:common="clr-namespace:AntYecai.Views.Common" xmlns:views="clr-namespace:AntYecai.Views"
         xmlns:antYecai="clr-namespace:AntYecai"
-        Title="Ant版野菜部落" Height="515" Width="485" MinHeight="600" MinWidth="800" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/AntYecai;component/Images/ant.ico">
+        Title="Ant版野菜部落" Height="515" Width="485" MinHeight="650" MinWidth="800" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/AntYecai;component/Images/ant.ico">
     <Window.Resources>
         <DoubleAnimationUsingKeyFrames x:Key="NotifyPanelAnimation">
             <LinearDoubleKeyFrame Value="0" KeyTime="0:0:0"/>
@@ -50,7 +50,7 @@
             </Grid>
 
             <Grid Grid.Row="3" Background="#D6EBF2F9" x:Name="majorOuterPanel" Height="Auto">
-                <Border HorizontalAlignment="Center" x:Name="majorPanel" Padding="30, 30, 30, 30">
+                <Border HorizontalAlignment="Center" x:Name="majorPanel">
                     <views:LoginView x:Name="loginView"/>
                 </Border>
                 <Border Name="waitingPanel" Background="#4E000000" Visibility="Hidden">

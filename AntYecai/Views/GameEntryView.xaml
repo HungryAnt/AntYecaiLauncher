@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="268" d:DesignWidth="426">
-    <Grid>
+    <Grid Margin="30">
         <Grid.Resources>
             <Style TargetType="Button">
                 <Setter Property="Control.FontSize" Value="14"></Setter>
@@ -16,7 +16,11 @@
         </Grid.Resources>
         <Border VerticalAlignment="Center" HorizontalAlignment="Center">
             <StackPanel Width="Auto" Height="Auto">
-                <StackPanel FlowDirection="LeftToRight">
+                <StackPanel FlowDirection="LeftToRight" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>用户：</TextBlock>
+                        <TextBlock Text="{Binding Path=LoginName}"/>
+                    </StackPanel>
                     <Button Name="buttonLogout" Margin="5" 
                             Template="{StaticResource ArtGrayButtonTemplate}" Click="buttonLogout_Click">注销</Button>
                 </StackPanel>

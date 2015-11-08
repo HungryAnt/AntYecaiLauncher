@@ -39,12 +39,14 @@ namespace AntYecai.Views
 
         private void buttonStartWindowMode_Click(object sender, RoutedEventArgs e)
         {
+            GameEntryViewModel.ScreenMode = "window";
             GameEntryViewModel.Enter();
         }
 
         private void buttonStartFullscreenMode_Click(object sender, RoutedEventArgs e)
         {
-
+            GameEntryViewModel.ScreenMode = "fullscreen";
+            GameEntryViewModel.Enter();
         }
 
         private void buttonLogout_Click(object sender, RoutedEventArgs e)

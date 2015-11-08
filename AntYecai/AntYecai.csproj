@@ -113,6 +113,7 @@
     <Compile Include="Models\UserRegisterInfo.cs" />
     <Compile Include="Services\PlatformServiceManager.cs" />
     <Compile Include="Services\UserSecurityService.cs" />
+    <Compile Include="Types\Gender.cs" />
     <Compile Include="Utils\MessageBoxUtil.cs" />
     <Compile Include="Utils\NativeWindowApiHelper.cs" />
     <Compile Include="Utils\ValidationUtil.cs" />
