@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using AntYecai.ViewModels;
+using AntYecai.Views.Common;
 
 namespace AntYecai.Views
 {
@@ -86,6 +87,15 @@ namespace AntYecai.Views
                 return false;
             }
             return true;
+        }
+
+        private void Weibo_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            WeiboWindow weiboWindow = new WeiboWindow()
+                {
+                    Owner = Window.GetWindow(this)
+                };
+            weiboWindow.ShowDialog();
         }
     }
 }

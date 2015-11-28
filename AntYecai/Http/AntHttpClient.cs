@@ -67,6 +67,7 @@ namespace AntYecai.Http
         private static HttpClient CreateHttpClient(String host)
         {
             var httpClient = new HttpClient();
+            httpClient.Timeout = TimeSpan.FromSeconds(3);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(MediaTypeJson));
             httpClient.DefaultRequestHeaders.Host = host;
             return httpClient;

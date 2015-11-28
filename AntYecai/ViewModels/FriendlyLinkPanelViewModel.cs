@@ -59,6 +59,12 @@ namespace AntYecai.ViewModels
                     ImagePath = "/AntYecai;component/Images/tetris.png",
                     Url = GameConfig.TetrisGameUrl
                 });
+            FriendlyLinks.Add(new FriendlyLink()
+                {
+                    Header = "网址大全",
+                    ImagePath = "/AntYecai;component/Images/hao123_0.jpg",
+                    Url = GameConfig.Hao123Url
+                });
         }
 
         private ObservableCollection<FriendlyLink> _friendlyLinks = new ObservableCollection<FriendlyLink>();

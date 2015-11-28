@@ -127,11 +127,23 @@
     <Compile Include="Views\AuthorWindow.xaml.cs">
       <DependentUpon>AuthorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Common\AdHao123Control.xaml.cs">
+      <DependentUpon>AdHao123Control.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Common\AntTitleControl.xaml.cs">
       <DependentUpon>AntTitleControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Common\WaitingControl.xaml.cs">
       <DependentUpon>WaitingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\WeiboControl.xaml.cs">
+      <DependentUpon>WeiboControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\WeiboWindow.xaml.cs">
+      <DependentUpon>WeiboWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\WeixinControl.xaml.cs">
+      <DependentUpon>WeixinControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Dialog\ExitWindow.xaml.cs">
       <DependentUpon>ExitWindow.xaml</DependentUpon>
@@ -202,11 +214,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Common\AdHao123Control.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Common\AntTitleControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Common\WaitingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\WeiboControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\WeiboWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\WeixinControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -314,6 +342,27 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ant.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\hao123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\hao123.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\hao123_0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logoHao123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\hao123_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\weixin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\weibo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />

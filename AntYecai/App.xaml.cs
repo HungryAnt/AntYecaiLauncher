@@ -44,9 +44,9 @@ namespace AntYecai
 
         private static void CheckRunning()
         {
-            bool isAppRunning;
-            var mutex = new System.Threading.Mutex(true, "ant_yecaibuluo_startup", out isAppRunning);
-            if (!isAppRunning)
+            bool createdNew;
+            var mutex = new System.Threading.Mutex(true, "ant_yecaibuluo_startup", out createdNew);
+            if (!createdNew)
             {
                 MessageBoxUtil.ShowError("本程序已经在运行了，请不要重复运行！");
                 ShowRunningAppWindow();
