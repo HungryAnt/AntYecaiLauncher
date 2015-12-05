@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="AntYecai.Views.Common.AdHao123Control"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="162" d:DesignWidth="373">
+    <GroupBox Header="推广" Foreground="White" Background="YellowGreen"
+              Name="adMainPanel" MouseLeftButtonDown="AdMainPanel_OnMouseLeftButtonDown">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Image Name="adImage" Source="/AntYecai;component/Images/hao123_1.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Name="buttonHomePageSetting" Margin="5" Padding="6" Template="{StaticResource ArtButtonTemplate}" Click="buttonHomePageSetting_Click">
+                    将hao123设置为IE首页
+                </Button>
+            </StackPanel>
+        </Grid>
+    </GroupBox>
+</UserControl>

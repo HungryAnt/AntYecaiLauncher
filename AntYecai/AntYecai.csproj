@@ -133,6 +133,9 @@
     <Compile Include="Views\Common\AntTitleControl.xaml.cs">
       <DependentUpon>AntTitleControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Common\SendWordControl.xaml.cs">
+      <DependentUpon>SendWordControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Common\WaitingControl.xaml.cs">
       <DependentUpon>WaitingControl.xaml</DependentUpon>
     </Compile>
@@ -150,6 +153,9 @@
     </Compile>
     <Compile Include="Views\Dialog\ExitWindow2.xaml.cs">
       <DependentUpon>ExitWindow2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialog\CommonWindow.xaml.cs">
+      <DependentUpon>CommonWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ForumView.xaml.cs">
       <DependentUpon>ForumView.xaml</DependentUpon>
@@ -222,6 +228,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Common\SendWordControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Common\WaitingControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -243,6 +253,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dialog\ExitWindow2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialog\CommonWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

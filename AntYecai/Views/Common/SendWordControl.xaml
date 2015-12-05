@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="AntYecai.Views.Common.SendWordControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="656">
+    <Border Margin="10" Width="500" Background="#A1FFFFFF">
+        <FlowDocumentScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+            <FlowDocument>
+                <Paragraph FontSize="20pt">甜姐雨姐石头哥你们能看到吗</Paragraph>
+                <Paragraph>感谢当初的你们是那么照顾我，当我还是个1级的小饭团的时候遇见了《零度家族》的你们，装备车子升级你们都包了，我答应过你们会做一个野菜出来</Paragraph>
+                <Paragraph>现在我也为Ant野菜部落做出了自己的贡献，希望你们为了自己的梦想努力奋斗，加油！祝福你们！</Paragraph>
+                <Paragraph TextAlignment="Right">—— 林树i</Paragraph>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Border>
+</UserControl>

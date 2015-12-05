@@ -9,6 +9,7 @@ using System.Windows.Media.Animation;
 using AntYecai.Models;
 using AntYecai.Tools;
 using AntYecai.ViewModels;
+using AntYecai.Views.Common;
 using AntYecai.Views.Dialog;
 
 namespace AntYecai.Views
@@ -265,6 +266,18 @@ namespace AntYecai.Views
         {
             AuthorWindow authorWindow = new AuthorWindow {Owner = this};
             authorWindow.ShowDialog();
+        }
+
+        private void SendWord_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            SendWordControl sendWordControl = new SendWordControl();
+            CommonWindow window = new CommonWindow()
+                {
+                    Owner = this
+                };
+            window.SetTitle("小饭团の寄语");
+            window.SetContentControl(sendWordControl);
+            window.ShowDialog();
         }
     }
 }

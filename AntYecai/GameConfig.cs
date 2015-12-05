@@ -4,12 +4,12 @@ namespace AntYecai
 {
     public static class GameConfig
     {
-        public const String RubyGameFileName = "yecaigame_0_8_0_beta.exe";
+        public const String RubyGameFileName = "yecaigame_0_9_0_beta.exe";
 
         public const String ApiServerEndpoint = "http://180.76.156.183:8001";
         // public const String ApiServerEndpoint = "http://localhost:8001";
 
-        public const String Version = "Ant野菜部落启动器-v0.2";
+        public const String Version = "Ant野菜部落启动器-v0.3";
         public const String HomePageUrl = "http://www.yecaibuluo.com/";
         public const String ForumUrl = "http://www.yecaibuluo.com/bbs/forum.php";
         public const String News = "http://www.yecaibuluo.com/bbs/forum.php?mod=forumdisplay&fid=2";
