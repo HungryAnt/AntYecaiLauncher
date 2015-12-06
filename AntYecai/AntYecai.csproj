@@ -107,6 +107,7 @@
     <Compile Include="Http\GameServerErrorInfo.cs" />
     <Compile Include="Http\GameServerHttpResponseException.cs" />
     <Compile Include="Models\FriendlyLink.cs" />
+    <Compile Include="Models\RankInfo.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserLoginInfo.cs" />
     <Compile Include="Models\UserLoginResult.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="ViewModels\GameEntryViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\PlatformViewModel.cs" />
+    <Compile Include="ViewModels\RankingListViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="Views\AuthorWindow.xaml.cs">
       <DependentUpon>AuthorWindow.xaml</DependentUpon>
@@ -177,6 +179,9 @@
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RankingListView.xaml.cs">
+      <DependentUpon>RankingListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterView.xaml.cs">
       <DependentUpon>RegisterView.xaml</DependentUpon>
@@ -285,6 +290,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RankingListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
