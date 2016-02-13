@@ -62,5 +62,10 @@ namespace AntYecai.ViewModels
                 };
             return PlatformServiceManager.Instance.GetService<UserSecurityService>().Login(userLoginInfo);
         }
+
+        public void Init()
+        {
+            _loginName = PlatformServiceManager.Instance.GetService<UserSecurityService>().CachedLoginName;
+        }
     }
 }

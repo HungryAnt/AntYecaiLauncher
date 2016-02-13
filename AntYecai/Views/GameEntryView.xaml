@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="268" d:DesignWidth="571">
     <DockPanel Margin="30">
-        <common:AdHao123Control DockPanel.Dock="Right" Margin="15, 5" VerticalAlignment="Center"/>
+<!--        <common:AdHao123Control DockPanel.Dock="Right" Margin="15, 5" VerticalAlignment="Center"/>-->
         <Grid>
             <Grid.Resources>
                 <Style TargetType="Button">

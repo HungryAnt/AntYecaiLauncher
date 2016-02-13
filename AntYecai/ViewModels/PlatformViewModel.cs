@@ -8,6 +8,7 @@ namespace AntYecai.ViewModels
         {
             RegisterViewModel = new RegisterViewModel();
             LoginViewModel = new LoginViewModel();
+            LoginViewModel.Init();
             GameEntryViewModel = new GameEntryViewModel();
         }
 
